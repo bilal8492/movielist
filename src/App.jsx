@@ -18,14 +18,9 @@ function App() {
             <Login />
           </Route>
           <Route exact path="/">
-            <SignUp />
+            {localStorage.getItem('isLoggedIn') ? <Movies /> : <SignUp />}
           </Route>
         </Switch>
-
-
-
-
-
       </div>
     </BrowserRouter>
   );

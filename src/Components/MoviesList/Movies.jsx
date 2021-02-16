@@ -1,14 +1,20 @@
 import React, { useState, useEffect } from 'react'
+import { useHistory } from 'react-router-dom'
 import Movie from '../Movie/Movie'
 import './Movies.css'
 const Movies = () => {
 
     const [movies, setMovies] = useState([])
+    const history = useHistory()
 
     useEffect(() => {
-        fetchCategory().then((data) => {
-            setMovies(data)
-        })
+        if (localStorage.getItem('isLoggedIn')) {
+            fetchCategory().then((data) => {
+                setMovies(data)
+            })
+        } else {
+            history.push('/login')
+        }
     }, [])
     const fetchCategory = async () => {
         // Due to CORS the below api url is not working
@@ -31,11 +37,19 @@ const Movies = () => {
         return data.result
     }
 
+    const logout = e => {
+        localStorage.removeItem('isLoggedIn')
+        history.push('/')
+    }
+
     return (
-        <div className="card-grid">
-            {movies?.map(movie => {
-                return <Movie key={movie._id} {...movie} />
-            })}
+        <div>
+            <button onClick={logout} >Logout</button>
+            <div className="card-grid">
+                {movies?.map(movie => {
+                    return <Movie key={movie._id} {...movie} />
+                })}
+            </div>
         </div>
     )
 }

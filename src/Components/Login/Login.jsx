@@ -11,6 +11,7 @@ const Login = () => {
         e.preventDefault()
         const user = JSON.parse(localStorage.getItem('user'));
         if (user.username === username && user.password === password) {
+            localStorage.setItem('isLoggedIn', true)
             history.push('/movies')
         }
         else {
