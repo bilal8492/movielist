@@ -21,4 +21,7 @@
     padding: 0;
     width: 90vw;
   }
+  .logout {
+    right: 5px;
+  }
 }
