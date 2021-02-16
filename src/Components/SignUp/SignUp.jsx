@@ -28,7 +28,7 @@ const SignUp = () => {
                 <input type="text" name="Username" placeholder="Enter Username" onChange={e => setUsername(e.target.value)} required /><br />
                 <input type="password" name="Passworn" id="" required onChange={e => setPassword(e.target.value)} /><br />
                 <input type="email" name="Email" id="" placeholder="Enter Your Email" onChange={e => setEmail(e.target.value)} required /><br />
-                <select id="dropdown" name="Profession" required onChange={e => setProfession(e.target.value)}  ><br />
+                <select id="dropdown" name="Profession" required onChange={e => setProfession(e.target.value)}>
                     <option disabled selected value> select your profession </option>
                     <option value="accountant" > Accountant </option>
                     <option value="chef" > Chef </option>
@@ -37,9 +37,10 @@ const SignUp = () => {
                     <option value="engineer" > Engineer </option>
                     <option value="other" > Other </option>
                 </select><br />
-                <button type="submit" className="sign-up">Sign Up</button>
+                <button type="submit" className="sign-up btn">Sign Up</button> <span> </span>
             </form>
-            <Link to="/login">Login</Link>
+            <br />
+            <Link to="/login">Login In</Link>
         </div>
 
     )
