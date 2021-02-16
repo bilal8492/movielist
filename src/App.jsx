@@ -4,18 +4,27 @@ import Movies from "./Components/MoviesList/Movies";
 import Login from "./Components/Login/Login";
 import SignUp from "./Components/SignUp/SignUp";
 
-import { Route, BrowserRouter, Switch } from "react-router-dom";
+import { Route, BrowserRouter, Switch, Link } from "react-router-dom";
+import About from "./Components/About/About";
 
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
+        <nav>
+          <li><Link to='/'>Home</Link></li>
+          <li><Link to='/about'>Company Info</Link></li>
+        </nav>
+
         <Switch>
           <Route path='/movies'>
             <Movies />
           </Route>
           <Route path='/login'>
             <Login />
+          </Route>
+          <Route path='/about'>
+            <About />
           </Route>
           <Route exact path="/">
             {localStorage.getItem('isLoggedIn') ? <Movies /> : <SignUp />}

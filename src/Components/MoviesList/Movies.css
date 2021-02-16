@@ -8,6 +8,12 @@
   padding-right: 20px;
 }
 
+.logout {
+  position: absolute;
+  right: 122px;
+  top: 20px;
+}
+
 @media (max-width: 750px) {
   .card-grid {
     gap: 15px;

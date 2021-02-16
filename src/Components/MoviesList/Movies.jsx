@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useHistory } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import Movie from '../Movie/Movie'
 import './Movies.css'
 const Movies = () => {
@@ -44,7 +44,7 @@ const Movies = () => {
 
     return (
         <div>
-            <button onClick={logout} >Logout</button>
+            <button className="logout btn" onClick={logout} >Logout</button>
             <div className="card-grid">
                 {movies?.map(movie => {
                     return <Movie key={movie._id} {...movie} />
