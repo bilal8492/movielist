@@ -10,8 +10,8 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <switch>
-          <Route path='/abc'>
+        <Switch>
+          <Route path='/movies'>
             <Movies />
           </Route>
           <Route path='/login'>
@@ -20,7 +20,7 @@ function App() {
           <Route exact path="/">
             <SignUp />
           </Route>
-        </switch>
+        </Switch>
 
 
 
