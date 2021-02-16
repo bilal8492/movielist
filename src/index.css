@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: darkgrey;
+  background-color: #f6f6f6;
   margin: 0;
   padding: 0;
   display: flex;
@@ -17,4 +17,10 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+@media (max-width: 750px) {
+  body {
+    align-items: flex-start;
+  }
 }
