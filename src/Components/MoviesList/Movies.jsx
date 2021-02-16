@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import Movie from '../Movie/Movie'
 import './Movies.css'
+import { backendUrl } from "../../config";
+
 const Movies = () => {
 
     const [movies, setMovies] = useState([])
@@ -32,7 +34,7 @@ const Movies = () => {
         //     })
 
         // })
-        const res = await fetch("http://localhost:3000/data.json")
+        const res = await fetch(`${backendUrl}/data.json`)
         const data = await res.json()
         return data.result
     }
