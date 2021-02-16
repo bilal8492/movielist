@@ -1,7 +1,7 @@
 import React from 'react'
 import './Movie.css'
 
-const Movie = () => {
+const Movie = ({ title, genre, director, stars, poster, language, releasedDate, pageViews, voting, totalVoted }) => {
     return (
         <div className="main">
             <div className="card-conatiner">
@@ -10,7 +10,7 @@ const Movie = () => {
                         <div className="arrow-up">
                         </div>
                         <div className="count">
-                            <span>0</span>
+                            <span>{voting}</span>
                         </div>
                         <div className="arrow-down">
                         </div>
@@ -18,14 +18,14 @@ const Movie = () => {
                     Votes
                 </div>
                 <div className="movie-container">
-                    <img src="https://s3.ap-south-1.amazonaws.com/hoblist/movies/poster/1569998864699_K.G.F:_Chapter 2.jpg" alt="" />
+                    <img src={poster} alt="" />
                     <div className="name-and-description">
-                        <h2 className="heading">KGF</h2>
-                        <div>genre: action,adventure,thriller</div>
-                        <div>director: cary joji fukunaga</div>
-                        <div>starring: ana de armas,rami</div>
-                        <div>min | English | 2 Apr</div>
-                        <div className="veiw-vote">130 views | voted by 1 people</div>
+                        <h2 className="heading">{title}</h2>
+                        <div>genre: {genre}</div>
+                        <div>director: {director[0]}</div>
+                        <div>starring: {stars}</div>
+                        <div>Mins | {language} | {releasedDate}</div>
+                        <div className="veiw-vote">{pageViews} views | voted by {totalVoted} people</div>
                     </div>
                 </div>
             </div>
