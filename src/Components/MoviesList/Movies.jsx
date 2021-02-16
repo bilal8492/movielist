@@ -41,7 +41,7 @@ const Movies = () => {
 
     const logout = e => {
         localStorage.removeItem('isLoggedIn')
-        history.push('/')
+        history.push('/login')
     }
 
     return (

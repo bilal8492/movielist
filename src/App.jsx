@@ -4,7 +4,7 @@ import Movies from "./Components/MoviesList/Movies";
 import Login from "./Components/Login/Login";
 import SignUp from "./Components/SignUp/SignUp";
 
-import { Route, BrowserRouter, Switch, Link } from "react-router-dom";
+import { Route, BrowserRouter, Switch, Link, Redirect } from "react-router-dom";
 import About from "./Components/About/About";
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <nav>
-          <li><Link to='/'>Home</Link></li>
+          <li><Link to='/movies'>Home</Link></li>
           <li><Link to='/about'>Company Info</Link></li>
         </nav>
 
@@ -27,7 +27,7 @@ function App() {
             <About />
           </Route>
           <Route exact path="/">
-            {localStorage.getItem('isLoggedIn') ? <Movies /> : <SignUp />}
+            {localStorage.getItem('isLoggedIn') ? <Redirect to="/movies" /> : <SignUp />}
           </Route>
         </Switch>
       </div>
