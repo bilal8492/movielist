@@ -1,0 +1,16 @@
+.card-grid {
+  width: 80vw;
+  height: 90vh;
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 0 auto;
+  padding-right: 20px;
+}
+
+@media (max-width: 750px) {
+  .card-grid {
+    gap: 15px;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
