@@ -11,14 +11,15 @@ const Movies = () => {
 
     useEffect(() => {
         if (localStorage.getItem('isLoggedIn')) {
-            fetchCategory().then((data) => {
+            fetchMovies().then((data) => {
                 setMovies(data)
             })
         } else {
             history.push('/login')
         }
     }, [])
-    const fetchCategory = async () => {
+
+    const fetchMovies = async () => {
         // Due to CORS the below api url is not working
         // const res = await fetch("https://hoblist.com/movieList", {
         //     method: 'POST',
