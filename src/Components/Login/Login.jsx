@@ -24,7 +24,7 @@ const Login = () => {
             <h1>Login Page</h1>
             <form onSubmit={handleSubmit}>
                 <input type="text" name="Username" placeholder="Enter Your Username" onChange={e => setUsername(e.target.value)} required /> <br />
-                <input type="password" name="Password" onChange={e => setPassword(e.target.value)} id="password" /> <br />
+                <input type="password" name="Password" placeholder="Enter Your Password" onChange={e => setPassword(e.target.value)} id="password" /> <br />
                 <button type="submit" className="log-in btn">Log In</button>
 
             </form>

@@ -26,7 +26,7 @@ const SignUp = () => {
             <h1 >Sign Up</h1>
             <form onSubmit={hadleFormSubmit}>
                 <input type="text" name="Username" placeholder="Enter Username" onChange={e => setUsername(e.target.value)} required /><br />
-                <input type="password" name="password" id="password" required onChange={e => setPassword(e.target.value)} /><br />
+                <input type="password" name="password" placeholder="Enter Password" id="password" required onChange={e => setPassword(e.target.value)} /><br />
                 <input type="email" name="Email" id="" placeholder="Enter Your Email" onChange={e => setEmail(e.target.value)} required /><br />
                 <select id="dropdown" name="Profession" required onChange={e => setProfession(e.target.value)}>
                     <option disabled selected value> select your profession </option>
